@@ -24,18 +24,10 @@ jobs:
         with:
           python-version: '3.13'
 
-      - name: Install system dependencies
+      - name: Install Chrome and dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y \
-            google-chrome-stable \
-            chromium-browser \
-            libnss3 \
-            libgconf-2-4 \
-            libappindicator1 \
-            libindicator7 \
-            libappindicator3-1 \
-            libgbm1
+          sudo apt-get install -y chromium-browser chromium-chromedriver xvfb
 
       - name: Install Python dependencies
         run: |
